@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>6</title>
+    </head>
+    <body>
+        <img src=""/>
+        <img src=""/>
+        <img src=""/>
+        <img src=""/>
+        <img src=""/>
+
+        <script type="text/javascript">
+
+            var imgs = document.querySelectorAll('img');
+            var imgSources = ['src/1.png', 'src/2.png', 'src/3.png', 'src/4.png', 'src/5.png'];
+
+            var progress = 0;
+
+            var interval = setInterval(function(){
+                var j = 0;
+                for(var i = 0; i < imgs.length; i++) {
+
+                    var p = 0;
+                    if(progress + i < imgs.length) {
+                        p = progress + i;
+                    } else {
+                        p = j;
+                        j++;
+                        if(j >= imgs.length) j = 0;
+                    }
+
+                    imgs[i].src = imgSources[p]
+                }
+
+                progress++;
+                if(progress >= imgs.length) progress = 0;
+
+            },1000);
+
+
+        </script>
+
+    </body>
+</html>

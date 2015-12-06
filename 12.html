@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>12</title>
+    </head>
+    <body>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <script type="text/javascript">
+            var divs = document.querySelectorAll('div');
+            console.log(divs);
+            for(var i = 0; i < divs.length; i++) {
+                divs[i].style.width = '100px';
+                divs[i].style.height = '100px';
+                divs[i].style.backgroundColor = 'magenta';
+                divs[i].addEventListener('click', function(e){
+                    var max = parseInt(e.target.style.width)
+                    var kolor = 250 * (max - e.offsetX)/max;
+                    e.target.style.backgroundColor = 'rgb('+ kolor + ','+ kolor + ','+ kolor +')';
+                }, false)
+            }
+        </script>
+    </body>
+</html>

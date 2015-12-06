@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>5</title>
+    </head>
+    <body>
+
+
+        <script type="text/javascript">
+        
+            var data = new Date();
+
+            var rok = data.getFullYear().toString().substring(2, 4);
+            var dzisiajWTygodniu = data.getDay();
+            var miesiac = data.getMonth() + 1;
+            var dzien = data.getDate();
+
+            if(dzisiajWTygodniu > 1) {
+                var doPon = 7 - dzisiajWTygodniu;
+            } else {
+                var doPon = 1;
+            }
+
+            if(dzien + doPon > 30) {
+                miesiac++
+                if(miesiac > 12) {
+                    rok = Number(rok) + 1;
+                    miesiac = 1;
+                }
+            }
+
+            for(var i = 0; i < 7; i++) {
+
+                var span = document.createElement('span');
+
+                var d = dzien + doPon + i;
+                if(d > 30) {
+                    miesiac++
+                    if(miesiac > 12) {
+                        rok = Number(rok) + 1;
+                        miesiac = 1;
+                    }
+                }
+
+                span.innerHTML = rok + "-" + miesiac + "-" + d + "</br>";
+
+                document.body.appendChild(span);
+            }
+        </script>
+    </body>
+</html>

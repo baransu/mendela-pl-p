@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>3</title>
+    </head>
+    <body>
+
+        <input type="number" name="name" value="">
+
+        <script type="text/javascript">
+            if(confirm("Chcesz wylosowac liczbe?")) {
+                var input = document.querySelector('input');
+                var liczba = Math.floor(Math.random() * 60) + 6;
+                input.value = liczba;
+            } else {
+                alert('szkoda :(')
+            }
+        </script>
+
+    </body>
+</html>

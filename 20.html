@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>20</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var isDiv = false;
+
+            document.oncontextmenu = function(e){
+                if(!isDiv){
+                    var div = document.createElement('div');
+                    div.innerHTML = 'nie skopiujesz!';
+                    div.style.position = 'absolute';
+                    div.style.left = e.pageX + 'px';
+                    div.style.top = e.pageY + "px";
+                    document.body.appendChild(div);
+                    isDiv = true;
+                    setTimeout(function(){
+                        document.body.removeChild(div);
+
+                        isDiv = false;
+                    },5000);
+                }
+                return false;
+            }
+
+            window.addEventListener('contextmenu', function(e){
+                e.preventDefault();
+            }, false)
+        </script>
+    </body>
+</html>

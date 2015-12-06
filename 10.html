@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>10</title>
+    </head>
+    <body>
+        <p onmouseover="pogrubienie(event)">tekscik</p>
+        <script type="text/javascript">
+            var t = document.querySelector('p').innerHTML;
+            function pogrubienie(e) {
+                var b = document.createElement('b');
+                b.innerHTML = t;
+                e.target.innerHTML = '';
+                e.target.appendChild(b);
+            }
+            function normal(e){
+                e.target.innerHTML = t;
+            }
+        </script>
+    </body>
+</html>

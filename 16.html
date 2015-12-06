@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>16</title>
+    </head>
+    <body>
+
+        <script type="text/javascript">
+            var tekst = prompt('wpisz imie i nazwisko').split(' ');
+            var imie = tekst[0];
+            var nazwisko = tekst[1];
+            var divImie = document.createElement('div');
+            divImie.innerHTML = imie;
+            var divNazwisko = document.createElement('div');
+            divNazwisko.innerHTML = nazwisko;
+            divImie.appendChild(divNazwisko);
+            document.body.appendChild(divImie);
+
+            var i = true;
+
+            divImie.addEventListener('click', function(e){
+                if(i) alert('Twoje imie:' + imie);
+                else i = true;
+            }, false)
+            divNazwisko.addEventListener('click', function(e){
+                i = false;
+                alert('Twoje nazwisko:' + nazwisko);
+            }, false);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>18</title>
+        <style media="screen">
+            .he {
+                width: 100px;
+                height: 100px;
+                background-color: magenta;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="he" onclick="zdarzenie(event)"></div>
+        <script type="text/javascript">
+            function zdarzenie(e){
+                e.target.innerHTML = e.target.offsetWidth + " x " + e.target.offsetHeight;
+            }
+        </script>
+    </body>
+</html>

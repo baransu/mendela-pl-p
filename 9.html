@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>9</title>
+    </head>
+    <body>
+        <input type="text" onkeydown="enter(event)" name="name" value="">
+        <script type="text/javascript">
+            function enter(e) {
+                if(e.which == 13) {
+                    var input = document.querySelector('input');
+                    if(!isNaN(input.value)){
+                        var liczba = input.value;
+                        if(confirm('odliczuc ' + liczba + 'sekund!')) {
+                            var interval = setInterval(function(){
+                                var l = Number(input.value) - 1;
+                                if(input.value == 0) {
+                                    clearInterval(input)
+                                } else {
+                                    input.value = l;
+                                }
+                            }, 500);
+                        }
+                    } else {
+                        alert('wpisz liczbe');
+                        input.value = '';
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
