@@ -1,3 +1,3 @@
-# mendale-pl-p
+# mendele-pl-p
 
-Rozwiazanie zadan z mendala.pl/p
+Rozwiazanie zadan z http://mendela.pl/p/
