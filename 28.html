@@ -1,0 +1,26 @@
+<!--
+Copyright 2015 - Tomasz Cichocinski <tomaszcichocinski@gmail.com>
+Released under the MIT License - https://github.com/Baransu/mendela-pl-p
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>28</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            document.body.addEventListener('keydown', function(e){
+                if(e.which != 16) {
+                    if(!e.shiftKey) {
+                        var s =  String.fromCharCode(e.which)
+                        alert("wcisnieto " + s.toLowerCase());
+                    } else {
+                        alert("wcisnieto " + String.fromCharCode(e.which));
+                    }
+                }
+            }, false)
+        </script>
+    </body>
+</html>

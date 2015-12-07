@@ -1,0 +1,46 @@
+<!--
+Copyright 2015 - Tomasz Cichocinski <tomaszcichocinski@gmail.com>
+Released under the MIT License - https://github.com/Baransu/mendela-pl-p
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>32</title>
+    </head>
+    <body>
+    	<form action="32.html" method="post" id="formularz">
+            <input type="number" name="name" value="" placeholder="a">
+            <input type="number" name="name" value="" placeholder="b">
+            <input type="number" name="name" value="" placeholder="c">
+            <input type="submit" name="name" value="submit">
+        </form>
+        <script type="text/javascript">
+        	var p = document.createElement('p');
+            document.body.appendChild(p);
+            var formularz = document.getElementById('formularz');
+            formularz.addEventListener('submit', function(e){
+                e.preventDefault();
+                var inputs = document.querySelectorAll('input');
+                var a = inputs[0].value;
+                var b = inputs[1].value;
+                var c = inputs[2].value;
+
+                var delta = b*b - (4*a*c);
+                var log = ''
+                if(delta > 0) {
+                	var x1 = -b + Math.sqrt(delta)/2*a;
+                	var x2 = -b - Math.sqrt(delta)/2*a;
+                	log = 'x1= ' + x1 + " x2= " + x2;
+                } else if(delta < 0) {
+                	log = 'brak'
+                } else {
+                	log = "x0= " + (-b/2*a);
+                }
+
+            	p.innerHTML = log;
+            }, false);
+        </script>
+    </body>
+</html>

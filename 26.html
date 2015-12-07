@@ -1,0 +1,36 @@
+<!--
+Copyright 2015 - Tomasz Cichocinski <tomaszcichocinski@gmail.com>
+Released under the MIT License - https://github.com/Baransu/mendela-pl-p
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>26</title>
+        <style media="screen">
+            .klasa {
+                width: 100px;
+                height: 100px;
+                background-color: magenta;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            do {
+                var ile = prompt('ile divowo utworzyc?')
+            } while(isNaN(ile))
+
+            ile = Number(ile);
+            for(var i = 0; i < ile; i++) {
+                var div = document.createElement('div');
+                div.className = 'klasa';
+                document.body.appendChild(div);
+            }
+
+        </script>
+    </body>
+</html>

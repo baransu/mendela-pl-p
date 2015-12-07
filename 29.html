@@ -1,0 +1,47 @@
+<!--
+Copyright 2015 - Tomasz Cichocinski <tomaszcichocinski@gmail.com>
+Released under the MIT License - https://github.com/Baransu/mendela-pl-p
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>29</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var timer = 0;
+            var kola = [];
+            var interval = setInterval(function(){
+
+                if(timer > 5000) {
+                    kola.push(new Kolo());
+                    timer = 0;
+                }
+
+                for(var i in kola) {
+                    kola[i].obracaj();
+                }
+
+                timer += 10;
+            }, 10)
+
+
+            function Kolo() {
+                this.obj = document.createElement('img');
+                this.obj.src = 'src/5.png';
+                this.obj.style.position = 'absolute';
+                this.obj.style.left = Math.random() * window.innerWidth + 'px';
+                this.obj.style.top = Math.random() * window.innerHeight + 'px';
+                document.body.appendChild(this.obj);
+                this.predkosc = Math.random() * 2;
+                this.angle = 0;
+            }
+            Kolo.prototype.obracaj = function(){
+                this.angle += this.predkosc;
+                this.obj.style.transform = "rotate("+ this.angle +"deg)";
+            }
+        </script>
+    </body>
+</html>

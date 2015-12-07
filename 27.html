@@ -1,0 +1,30 @@
+<!--
+Copyright 2015 - Tomasz Cichocinski <tomaszcichocinski@gmail.com>
+Released under the MIT License - https://github.com/Baransu/mendela-pl-p
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>27</title>
+    </head>
+    <body>
+        <textarea id="area">
+tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst tekst
+        </textarea>
+        <script type="text/javascript">
+            var area = document.getElementById('area');
+            var currentBorder = 0;
+            var borders = ['2px dotted black', '2px dashed black', ]
+            area.addEventListener('keydown', function(e){
+                e.preventDefault();
+                if(currentBorder >= borders.length) currentBorder = 0;
+
+                e.target.style.border = borders[currentBorder++];
+
+            }, false)
+
+        </script>
+    </body>
+</html>
